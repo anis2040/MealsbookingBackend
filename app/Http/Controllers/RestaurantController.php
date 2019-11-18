@@ -6,7 +6,6 @@ use App\Restaurant;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Resources\Restaurant as RestaurantResource;
-use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\Facades\DB;
 
 class RestaurantController extends Controller
@@ -18,8 +17,7 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurant = Restaurant::paginate(5);
-
+        $restaurant = Restaurant::all();
         return RestaurantResource::collection($restaurant);
        // return view('restaurants.index',['restaurants' => $restaurant]);
     }
