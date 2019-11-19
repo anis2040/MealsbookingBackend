@@ -19,6 +19,8 @@ Route::middleware('auth:api')->group(function() {
 
 Route::get('restaurants','RestaurantController@index');
 
+Route::get('topten','RestaurantController@topTen');
+
 
 Route::get('restaurant/{id}','RestaurantController@show');
 
