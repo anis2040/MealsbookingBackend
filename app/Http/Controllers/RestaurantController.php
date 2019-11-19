@@ -69,8 +69,8 @@ class RestaurantController extends Controller
     }
 
     public function sortBycategory($category) {
-        $restaurant = DB::table('restaurants')->where('category',$category)->get();
-      //  dd($restaurant);
+        $restaurant = Restaurant::where('category',$category)->get();
+
         return RestaurantResource::collection($restaurant);
     }
 
