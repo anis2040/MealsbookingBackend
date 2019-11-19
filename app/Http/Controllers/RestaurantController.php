@@ -63,7 +63,8 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-        $restaurant = Restaurant::findOrFail($id)::with('restaurant');
+        $restaurant = Restaurant::findOrFail($id);
+        RestaurantResource::withoutWrapping();
         // Return a single restaurant as a resource
         return new RestaurantResource($restaurant);
     }

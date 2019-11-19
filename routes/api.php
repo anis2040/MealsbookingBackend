@@ -27,6 +27,12 @@ Route::get('restaurant/{id}','RestaurantController@show');
 Route::get('restaurant-category/{category}','RestaurantController@sortByCategory');
 
 
+//Menu
+Route::get('menus','MenuController@index');
+Route::post('menu','MenuController@store');
+Route::get('menu/{id}','MenuController@show');
+
+
 Route::post('restaurant','RestaurantController@store');
 
 Route::put('restaurant','RestaurantController@store');

@@ -12,13 +12,13 @@ class Restaurant extends Model
     public function reservations(){
         return $this->hasMany(Reservation::class);
     }
-    public function images(){
-        return $this->hasMany(Image::class);
+    public function image(){
+        return $this->hasOne(Image::class);
     }
     public function ratings() {
         return $this->hasMany(Rating::class);
     }
     public function menu() {
-        return $this->hasOne(Menu::class);
+        return $this->hasMany(Menu::class);
     }
 }
