@@ -15,7 +15,7 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        $reservation = Reservation::paginate(5);
+        $reservation = Reservation::all();
 
         return ReservationResource::collection($reservation);
     }
