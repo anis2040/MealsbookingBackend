@@ -46,7 +46,7 @@ class ReservationController extends Controller
         $reservation->time = $request->input('time');
         $reservation->approved = $request->input('approved');
         $reservation->restaurant_id = $request->input('restaurant_id');
-        $reservation->user_id = $request->input('restaurant_id');
+        $reservation->user_id = $request->input('user_id');
 
         if ($reservation->save()) {
             return new ReservationResource($reservation);

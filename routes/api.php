@@ -57,6 +57,10 @@ Route::put('reservation','ReservationController@store');
 Route::delete('reservation/{id}','ReservationController@destroy');
 
 
+Route::get('ratings','RatingsController@index');
+Route::get('rating/{id}','RatingsController@ratingByResto');
+
+Route::post('rating','RatingsController@store');
 
 
 
