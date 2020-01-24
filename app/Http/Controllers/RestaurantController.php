@@ -75,7 +75,7 @@ class RestaurantController extends Controller
         return RestaurantResource::collection($restaurant);
     }
 
-    public function topTen() {
+    public function topTenRestaurants() {
         $resto = Restaurant::join('ratings','restaurants.id','=','ratings.restaurant_id')->orderBy('ratings.rating','desc')
             ->select('restaurants.*')->distinct()->get();
         return  RestaurantResource::collection($resto);

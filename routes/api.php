@@ -17,50 +17,35 @@ Route::middleware('auth:api')->group(function() {
     Route::post('logout','Api\Auth\LoginController@logout');
 });
 
+// Auth
+Route::post('register','Api\Auth\RegisterController@register');
+Route::post('login','Api\Auth\LoginController@login');
+Route::post('refresh','Api\Auth\LoginController@refresh');
+
+// Restaurants
 Route::get('restaurants','RestaurantController@index');
-
-Route::get('topten','RestaurantController@topTen');
-
-
+Route::get('topten','RestaurantController@topTenRestaurants');
 Route::get('restaurant/{id}','RestaurantController@show');
-
 Route::get('restaurant-category/{category}','RestaurantController@sortByCategory');
-
+Route::post('restaurant','RestaurantController@store');
+Route::put('restaurant','RestaurantController@store');
+Route::delete('restaurant/{id}','RestaurantController@destroy');
 
 //Menu
 Route::get('menus','MenuController@index');
 Route::post('menu','MenuController@store');
 Route::get('menu/{id}','MenuController@show');
 
-
-Route::post('restaurant','RestaurantController@store');
-
-Route::put('restaurant','RestaurantController@store');
-
-Route::delete('restaurant/{id}','RestaurantController@destroy');
-
-Route::post('register','Api\Auth\RegisterController@register');
-
-Route::post('login','Api\Auth\LoginController@login');
-
-Route::post('refresh','Api\Auth\LoginController@refresh');
-
-
-// Reservation rotes
-
+// Reservation
 Route::get('reservations','ReservationController@index');
-
 Route::post('reservation','ReservationController@store');
-
 Route::put('reservation','ReservationController@store');
-
 Route::delete('reservation/{id}','ReservationController@destroy');
 
-
-Route::get('ratings','RatingsController@index');
-Route::get('rating/{id}','RatingsController@ratingByResto');
-
-Route::post('rating','RatingsController@store');
+// Rating
+Route::get('ratings','RatingController@index');
+Route::get('rating/{id}','RatingController@ratingByResto');
+Route::post('rating','RatingController@store');
 
 
 

@@ -9,7 +9,7 @@ use App\Restaurant;
 use Illuminate\Http\Request;
 
 
-class RatingsController extends Controller
+class RatingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,16 +21,6 @@ class RatingsController extends Controller
         $reservation = Rating::all();
 
         return RatingResource::collection($reservation);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -58,50 +48,5 @@ class RatingsController extends Controller
         $restaurant = Rating::where('restaurant_id',$id)->get();
 
         return RatingResource::collection($restaurant);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Rating  $ratings
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Rating $ratings)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Rating  $ratings
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Rating $ratings)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Rating  $ratings
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Rating $ratings)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Rating  $ratings
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Rating $ratings)
-    {
-        //
     }
 }
